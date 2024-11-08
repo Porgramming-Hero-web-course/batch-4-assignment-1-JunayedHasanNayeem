@@ -61,8 +61,7 @@ How It Works:
 async: Declares an asynchronous function that returns a promise.
 await: Pauses the execution of the function until the awaited promise resolves, making asynchronous code behave more like synchronous code.
 Example Using async/await:
-typescript
-Copy code
+```
 async function fetchData(): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => resolve("Data loaded!"), 1000);
@@ -80,6 +79,7 @@ async function loadData() {
 
 loadData();
 
+```
 Why async/await is Preferred:
 
 Improved Readability: The flow of code looks synchronous, making it easier to follow.
@@ -90,8 +90,7 @@ Cleaner Structure: It flattens deeply nested code, avoiding callback hell and re
 With async/await, handling multiple asynchronous operations is straightforward. You can either run them sequentially (one after the other) or in parallel (simultaneously), depending on your use case.
 
 Running Promises Sequentially:
-typescript
-Copy code
+```
 async function sequentialFetch() {
   const data1 = await fetchData();
   const data2 = await fetchData();
@@ -100,9 +99,10 @@ async function sequentialFetch() {
 }
 
 sequentialFetch();
+```
 Running Promises in Parallel:
-typescript
-Copy code
+
+```
 async function parallelFetch() {
   const [data1, data2] = await Promise.all([fetchData(), fetchData()]);
   console.log("Data 1:", data1);
@@ -110,7 +110,7 @@ async function parallelFetch() {
 }
 
 parallelFetch();
-
+```
 Sequential: Use when each task depends on the previous one.
 Parallel: Use when tasks are independent and can be executed simultaneously, improving performance.
 
@@ -118,8 +118,7 @@ Parallel: Use when tasks are independent and can be executed simultaneously, imp
 TypeScript enhances async/await by allowing you to define precise types for asynchronous functions. This helps catch type errors early, making your code more robust.
 
 Example with Types:
-typescript
-Copy code
+```
 async function fetchData(): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => resolve("Data loaded!"), 1000);
@@ -130,6 +129,7 @@ async function displayData(): Promise<void> {
   const data: string = await fetchData();
   console.log(data);
 }
+```
 In this example, fetchData returns a Promise<string>, and displayData has a Promise<void> return type, ensuring the function's return values are handled correctly.
 
 ## 6. Best Practices for Using async/await in TypeScript
