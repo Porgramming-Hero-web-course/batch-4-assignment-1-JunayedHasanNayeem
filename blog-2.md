@@ -1,4 +1,4 @@
-# Handling Asynchronous Operations in TypeScript: async/await vs Callbacks vs Promises 
+# How to handle asynchronous operations using async/await over callback/promise TypeScript
 
 Asynchronous programming is essential in modern web development, especially when working with I/O-bound tasks like API calls, file operations, and database queries. In TypeScript (and JavaScript), managing asynchronous code has evolved from callbacks to promises and, more recently, to async/await. Each method has its advantages, but async/await is widely regarded as the most readable and maintainable approach.
 
