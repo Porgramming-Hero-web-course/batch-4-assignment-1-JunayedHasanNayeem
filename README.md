@@ -8,8 +8,8 @@ This guide explains how to handle asynchronous operations in TypeScript, compare
 Callbacks were the original way to handle asynchronous operations in JavaScript. A callback is simply a function passed as an argument to another function, which is executed once the task completes. While functional, callbacks can lead to deeply nested code, making it hard to manage and understand.
 
 Example Using Callbacks:
-typescript
-Copy code
+
+```
 function fetchData(callback: (data: string) => void) {
   setTimeout(() => {
     callback("Data loaded!");
@@ -19,7 +19,7 @@ function fetchData(callback: (data: string) => void) {
 fetchData((data) => {
   console.log(data);
 });
-
+```
 Drawbacks of Callbacks:
 Callback hell: Nested callbacks can lead to deeply indented, hard-to-read code.
 Error handling: Handling errors in callbacks can be difficult and inconsistent.
@@ -29,8 +29,7 @@ Readability: Asynchronous flows can be tricky to follow when callbacks are neste
 Promises offer a more structured way of handling asynchronous code by representing the eventual completion (or failure) of an asynchronous operation. Promises allow you to chain multiple operations using .then(), providing better control and readability compared to callbacks.
 
 Example Using Promises:
-typescript
-Copy code
+```
 function fetchData(): Promise<string> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -46,7 +45,7 @@ fetchData()
   .catch((error) => {
     console.error(error);
   });
-
+```
 Benefits of Promises:
 
 Chaining: Promises allow chaining with .then(), making code more linear and readable.
